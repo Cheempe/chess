@@ -68,7 +68,6 @@ table.chessboard {
   min-width: 270px;
 }
 
-/* Move history styling */
 .history-panel {
   background: #fff;
   border-radius: 12px;
