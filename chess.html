@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Modern Simple Chess (No chessboard.js)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h2>Modern Simple Chess</h2>
+  <div id="status"></div>
+  <div class="chess-container">
+    <table id="board" class="chessboard"></table>
+    <div class="history-panel">
+      <h3>Move History</h3>
+      <ul id="history" class="history-list"></ul>
+      <button id="undoBtn" class="panel-btn">Undo</button>
+      <button id="redoBtn" class="panel-btn">Redo</button>
+      <button id="resetBtn" class="panel-btn" style="background:#f75d59;">Reset</button>
+      <button id="aiBtn" class="panel-btn" style="background:#ffb700;margin-top:7px;">AI: <span id="aiStatus">OFF</span></button>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/chess.js@0.10.3/chess.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
