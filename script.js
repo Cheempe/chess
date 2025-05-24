@@ -1,4 +1,3 @@
-// Unicode pieces for board
 const PIECES = {
   'p':'♟', 'r':'♜', 'n':'♞', 'b':'♝', 'q':'♛', 'k':'♚',
   'P':'♙', 'R':'♖', 'N':'♘', 'B':'♗', 'Q':'♕', 'K':'♔'
@@ -29,7 +28,6 @@ function renderBoard() {
       square.className = ((r+c)%2 ? 'dark' : 'light');
       square.dataset.square = 'abcdefgh'[c] + (8-r);
       if (piece) square.textContent = PIECES[piece.color === 'w' ? piece.type.toUpperCase() : piece.type];
-      // Highlight for selection, legal moves, and last move
       if (selected && selected === square.dataset.square) square.classList.add('selected');
       if (legalMoves.includes(square.dataset.square)) square.classList.add('legal');
       if (lastMove && (lastMove.from === square.dataset.square || lastMove.to === square.dataset.square)) square.classList.add('lastmove');
@@ -149,7 +147,6 @@ function aiMove() {
   if (game.turn() !== 'b' || game.game_over()) return;
   let moves = game.moves({ verbose: true });
   if (!moves.length) return;
-  // Very basic AI: random legal move
   let move = moves[Math.floor(Math.random()*moves.length)];
   let result = game.move(move);
   moveHistory.push(result);
